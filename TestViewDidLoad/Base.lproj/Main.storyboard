@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestViewDidLoad" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgR-sZ-BGo">
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Ew7-zD-tka"/>
+                                    <constraint firstAttribute="height" constant="200" id="d9y-eP-jRP"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPj-HO-su0">
+                                <state key="normal" title="Go to other controller"/>
+                                <connections>
+                                    <action selector="onNextTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pIE-Zv-4sn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VgR-sZ-BGo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5Bz-ix-UQI"/>
+                            <constraint firstItem="VgR-sZ-BGo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IGg-GB-A3L"/>
+                            <constraint firstItem="ZPj-HO-su0" firstAttribute="top" secondItem="VgR-sZ-BGo" secondAttribute="bottom" constant="20" id="cQc-ZT-ppD"/>
+                            <constraint firstItem="ZPj-HO-su0" firstAttribute="centerX" secondItem="VgR-sZ-BGo" secondAttribute="centerX" id="dsm-bs-t6K"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="testView" destination="VgR-sZ-BGo" id="5st-WD-jgU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="BF7-xR-WtT">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="Szq-Yl-ePl" customClass="SecondViewController" customModule="TestViewDidLoad" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Po8-LS-bLn"/>
+                        <viewControllerLayoutGuide type="bottom" id="tn7-lo-qmT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6vj-6H-p1D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Syx-we-o2q">
+                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Aly-aa-fUa"/>
+                                    <constraint firstAttribute="height" constant="120" id="DBg-Cd-pB6"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPS-Lf-xQO">
+                                <state key="normal" title="Go back"/>
+                                <connections>
+                                    <action selector="onBackTap:" destination="Szq-Yl-ePl" eventType="touchUpInside" id="gMe-Dw-fC1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Syx-we-o2q" firstAttribute="centerY" secondItem="6vj-6H-p1D" secondAttribute="centerY" id="O05-aU-TzE"/>
+                            <constraint firstItem="tPS-Lf-xQO" firstAttribute="centerX" secondItem="Syx-we-o2q" secondAttribute="centerX" id="Z3Q-Gu-3tc"/>
+                            <constraint firstItem="Syx-we-o2q" firstAttribute="centerX" secondItem="6vj-6H-p1D" secondAttribute="centerX" id="etL-2L-wV1"/>
+                            <constraint firstItem="tPS-Lf-xQO" firstAttribute="top" secondItem="Syx-we-o2q" secondAttribute="bottom" constant="20" id="rSC-ky-gca"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="testView" destination="Syx-we-o2q" id="niZ-hy-tId"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0kG-Ho-6WJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="38"/>
+        </scene>
+    </scenes>
+</document>
