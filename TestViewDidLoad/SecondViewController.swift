@@ -28,7 +28,14 @@ class SecondViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.traceFrame(view: self.testView, message: "View did load")
+        self.traceFrame(view: self.testView, message: "View did load before layout if needed")
+
+        self.view.layoutIfNeeded()
+        self.testView.layer.cornerRadius = self.testView.frame.size.height / 4.0
+        self.testView.clipsToBounds = true
+        
+        self.traceFrame(view: self.testView, message: "View did load after layout if needed")
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -44,13 +51,6 @@ class SecondViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.traceFrame(view: self.testView, message: "View will appear")
-    }
-    
-    override func viewDidCalculateInitialFrame() {
-        super.viewDidCalculateInitialFrame()
-        self.traceFrame(view: self.testView, message: "View did calculate initial frame")
-        self.testView.layer.cornerRadius = self.testView.frame.size.height / 4.0
-        self.testView.clipsToBounds = true
     }
     
     @IBAction func onBackTap(_ sender: AnyObject) {
